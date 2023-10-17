@@ -17,6 +17,7 @@ package otel // import "go.opentelemetry.io/otel"
 import (
 	"go.opentelemetry.io/otel/internal/global"
 	"go.opentelemetry.io/otel/trace"
+	"fmt"
 )
 
 // Tracer creates a named tracer that implements Tracer interface.
@@ -24,6 +25,7 @@ import (
 //
 // This is short for GetTracerProvider().Tracer(name, opts...)
 func Tracer(name string, opts ...trace.TracerOption) trace.Tracer {
+	fmt.Println("TRACER")
 	return GetTracerProvider().Tracer(name, opts...)
 }
 
